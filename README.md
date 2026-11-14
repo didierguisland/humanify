@@ -1,10 +1,10 @@
 # Humanify
 
-**The layer I use every day to work with several AI models at once.** It sits on top of Claude Code and coordinates Claude (Opus and Sonnet), OpenAI Codex and Google Gemini across all my projects, so the same correction never has to be learned twice and delegated work leaves a record of what it cost and how well it went.
+**The layer I use every day to work with several AI models at once.** It sits on top of Claude Code and coordinates Claude (Opus and Sonnet), OpenAI Codex and Google Gemini across all my projects, so corrections are recorded to reduce their recurrence and delegated work leaves a record of what it cost and how well it went.
 
 ```mermaid
 flowchart LR
-  U[Me<br/>what I say now always wins] --> O[Orchestrator<br/>Claude Opus]
+  U[Human<br/>live override · N3] --> O[Orchestrator<br/>Claude Opus]
   R[(Rules by rigidity<br/>N0 → N1 → N2)] --> O
   O -- router: judgment? volume?<br/>cost of a mistake? visible? --> A1[Claude Sonnet<br/>mechanical work]
   O --> A2[Codex<br/>builds and audits]
@@ -33,7 +33,7 @@ When you work with several models across many projects, two things go wrong. Eac
 - **One in five routine tasks suggests trying a cheaper model**, so the system keeps learning; the orchestrator decides, and never on tasks where a mistake is expensive.
 - **Detect, don't armor.** The agents cooperate; the risk is that they drift. So nothing blocks them: the hooks watch, log and warn.
 - **Numbers go to SQLite; judgment, rules and explanations go to Markdown**, where a person can read and edit them.
-- **Creative ideas are grounded before they're built.** A model's design once proposed something that couldn't be programmed and had to be redone; now every creative proposal is checked against the real limits first.
+- **Creative ideas are grounded before they're built.** After a model proposed a design the renderer couldn't build and it had to be redone, every creative proposal is now checked against real technical limits before implementation.
 
 ## What I decided, what the models did, what a person verified
 
@@ -53,6 +53,7 @@ From a single read-only snapshot of my own scoreboard (Nov 2–13, 2026): **425 
 
 1. Clone this repository and set `HUMANIFY_HOME` to its path.
 2. Add one line to `~/.claude/CLAUDE.md`: `@<path-to-repo>/cerebro/CONSTITUCION.md` (write the real path; Claude Code does not expand variables there). Deleting that line turns Humanify off.
+   In `cerebro/CONSTITUCION.md`, also replace `$HUMANIFY_HOME` in the `@import` with the real repository path; Claude Code does not expand variables in imports.
 3. Merge the hook entries from [instalacion/settings.example.json](instalacion/settings.example.json) into `~/.claude/settings.json`, replacing `$HUMANIFY_HOME` with the real path.
 4. Optional: copy the skills in `instalacion/skills/` to `~/.claude/skills/`, and call Codex and Gemini through `herramientas/codex.sh` / `herramientas/argon.sh` so their runs are recorded.
 

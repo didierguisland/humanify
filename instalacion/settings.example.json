@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HUMANIFY_HOME/hooks/humanify.sh guardia",
+            "command": "\"$HUMANIFY_HOME/hooks/humanify.sh\" guardia",
             "timeout": 5
           }
         ]
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HUMANIFY_HOME/hooks/humanify.sh delegacion",
+            "command": "\"$HUMANIFY_HOME/hooks/humanify.sh\" delegacion",
             "timeout": 5
           }
         ]
@@ -29,7 +29,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HUMANIFY_HOME/hooks/humanify.sh mensaje",
+            "command": "\"$HUMANIFY_HOME/hooks/humanify.sh\" mensaje",
             "timeout": 5
           }
         ]
@@ -40,7 +40,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HUMANIFY_HOME/hooks/humanify.sh cierre",
+            "command": "\"$HUMANIFY_HOME/hooks/humanify.sh\" cierre",
             "timeout": 10
           }
         ]
@@ -52,7 +52,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HUMANIFY_HOME/hooks/humanify.sh arranque",
+            "command": "\"$HUMANIFY_HOME/hooks/humanify.sh\" arranque",
             "timeout": 5
           }
         ]
@@ -62,7 +62,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HUMANIFY_HOME/hooks/humanify.sh compactado",
+            "command": "\"$HUMANIFY_HOME/hooks/humanify.sh\" compactado",
             "timeout": 5
           }
         ]
@@ -73,7 +73,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HUMANIFY_HOME/hooks/humanify.sh subagente",
+            "command": "\"$HUMANIFY_HOME/hooks/humanify.sh\" subagente",
             "timeout": 5
           }
         ]
