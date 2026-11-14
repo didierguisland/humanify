@@ -1,0 +1,9 @@
+{
+  "motor": "agy",
+  "modelo": "gemini-3.8-flash-low",
+  "esfuerzo": "low",
+  "color": "38;5;80",
+  "activo": true,
+  "orden": 1,
+  "ronda": true
+}

@@ -1,0 +1,9 @@
+{
+  "motor": "agy",
+  "modelo": "gemini-4-argon-medium",
+  "esfuerzo": "medium",
+  "color": "38;5;177",
+  "activo": true,
+  "orden": 2,
+  "ronda": true
+}

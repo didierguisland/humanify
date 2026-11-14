@@ -1,0 +1,103 @@
+{
+  "_LEEME": "Reparto fijo de quién hace cada tipo de trabajo, por oficio ('*' = cualquiera) y, dentro de un oficio, por papel (animar, retocar…). Cada entrada dice su motivo. Nada cambia de agente solo: el marcador solo sugiere, en el motivo. 'alternativa' es quien hace la versión B cuando Didier pide un A/B (ruta iniciar --ab). Cambiar el reparto lo decide Didier.",
+  "*": {
+    "idear": {
+      "agente": "argon",
+      "esfuerzo": "medium",
+      "motivo": "a priori: Argon dirige lo creativo (CLAUDE.md); sin evidencia medida todavía",
+      "alternativa": {
+        "agente": "flash",
+        "esfuerzo": "low"
+      }
+    },
+    "decidir": {
+      "agente": "opus",
+      "esfuerzo": "medium",
+      "motivo": "a priori: el juicio es de Opus (cerebro/MODELOS.md)"
+    },
+    "especificar": {
+      "agente": "opus",
+      "esfuerzo": "medium",
+      "motivo": "a priori: especificar es juicio y quien construye lo reinterpreta; Sonnet entra como exploración",
+      "alternativa": {
+        "agente": "sonnet",
+        "esfuerzo": "medium"
+      }
+    },
+    "construir": {
+      "agente": "opus",
+      "esfuerzo": "medium",
+      "motivo": "a priori: construir con juicio = Opus (cerebro/MODELOS.md)",
+      "alternativa": {
+        "agente": "sonnet",
+        "esfuerzo": "medium"
+      }
+    },
+    "verificar": {
+      "agente": "argon",
+      "esfuerzo": "medium",
+      "motivo": "a priori: Argon revisa imágenes por cuota de Google"
+    },
+    "juzgar": {
+      "agente": "argon",
+      "esfuerzo": "medium",
+      "motivo": "a priori: Argon juzga a ciegas por cuota de Google"
+    }
+  },
+  "video": {
+    "construir": {
+      "agente": "opus",
+      "esfuerzo": "medium",
+      "motivo": "reparto fijo, decisión de Didier (3-nov): construir con juicio = Opus",
+      "alternativa": {
+        "agente": "sonnet",
+        "esfuerzo": "medium"
+      }
+    },
+    "animar": {
+      "agente": "opus",
+      "esfuerzo": "medium",
+      "motivo": "reparto fijo, decisión de Didier (3-nov): la animación siempre la hace Opus",
+      "alternativa": {
+        "agente": "sonnet",
+        "esfuerzo": "medium"
+      }
+    },
+    "retocar": {
+      "agente": "sonnet",
+      "esfuerzo": "medium",
+      "motivo": "decisión de Didier y Opus (3-nov): retoques específicos, baratos, y Argon revisa el render después; lo de fondo se le pide a Opus"
+    },
+    "libro": {
+      "agente": "sonnet",
+      "esfuerzo": "medium",
+      "motivo": "a priori: cotejar regla por regla y reportar, no crear; sin evidencia, se mide en el primer video serio"
+    },
+    "sonido": {
+      "agente": "opus",
+      "esfuerzo": "medium",
+      "motivo": "decisión de Didier (3-nov, A/B de oído): Opus «200 % mejor» que Sonnet en sonido; ya no se repite el A/B"
+    },
+    "dirigir": {
+      "agente": "argon",
+      "modelo": "gemini-4-argon-high",
+      "esfuerzo": "high",
+      "motivo": "decisión de Didier (4-nov): Argon high escribe la dirección construible; su documento de 460 líneas dio el salto de calidad"
+    },
+    "aterrizar": {
+      "agente": "opus",
+      "esfuerzo": "medium",
+      "motivo": "regla: lo creativo de Argon lo aterriza Opus (promesa, mareo, doble foco, saturación) antes de construir"
+    },
+    "textos": {
+      "agente": "sonnet",
+      "esfuerzo": "medium",
+      "motivo": "copy corto con reglas claras: no pide el juicio de Opus; el orquestador lo revisa al entregar"
+    },
+    "imagenes": {
+      "agente": "terra",
+      "esfuerzo": "low",
+      "motivo": "recortes por Codex, apagado salvo que Didier lo autorice (ruta iniciar --con imagenes)"
+    }
+  }
+}

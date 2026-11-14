@@ -1,0 +1,9 @@
+{
+  "motor": "codex",
+  "modelo": "gpt-6.1-sol",
+  "esfuerzo": "low",
+  "color": "38;5;221",
+  "activo": true,
+  "orden": 3,
+  "ronda": true
+}

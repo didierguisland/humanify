@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.pyc
+registro/
+*.log
+.env
+.dev.vars
+node_modules/
+.codex-*
+examples/*-wal
+examples/*-shm
+examples/.cola-*

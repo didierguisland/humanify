@@ -1,0 +1,9 @@
+{
+  "motor": "claude",
+  "modelo": "opus",
+  "esfuerzo": "medium",
+  "color": "38;5;209",
+  "activo": true,
+  "orden": 6,
+  "ronda": true
+}

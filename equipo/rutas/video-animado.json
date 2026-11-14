@@ -1,0 +1,142 @@
+{
+ "nombre": "video-animado",
+ "descripcion": "Video corto animado en HTML (estilo de la ruta html-explica de la fábrica de ProjectA), de la idea al MP4.",
+ "etapas": [
+  {
+   "id": "concepto",
+   "nombre": "Concepto",
+   "invitados": [
+    "flash",
+    "opus"
+   ],
+   "abre": "Ponte la gorra de director creativo. Propón 3 direcciones con carácter propio (una línea cada una: idea, emoción e imagen clave) y di cuál recomiendas.",
+   "reacciona": "Agrega lo que le falta a alguna dirección, objeta si algo no se puede dibujar o no engancha, o di 'paso'. Flash: ideas sueltas. Opus: aterriza contra lo que se puede hacer.",
+   "cierra": "Integra lo que dijeron y deja UNA dirección: la duda que abre, la emoción, la imagen clave, cómo termina y por qué la gente lo compartiría.",
+   "entregable": "01-CONCEPTO.md",
+   "revisor": "opus",
+   "revisa": "¿La dirección abre una duda que la gente se hace, se puede dibujar en HTML y el final contesta el inicio?",
+   "compuerta": "ángulo",
+   "trabajo": "idear"
+  },
+  {
+   "id": "escenas",
+   "nombre": "Escenas a nivel general",
+   "invitados": [
+    "argon"
+   ],
+   "abre": "Con el concepto aprobado, propone el escenario y las escenas: UNA por cada cambio de imagen que haga falta para explicar (las necesarias, sin relleno). Para cada una: qué se ve, la imagen concreta que explica, y qué la conecta con la siguiente. Un solo universo visual.",
+   "reacciona": "Argon: di qué escena no se lee de un vistazo o qué imagen falta, con una propuesta concreta.",
+   "cierra": "Deja la lista final numerada, una línea por escena con el formato 'ESCENA n: qué se ve y qué explica', y al final el hilo que las une. Esta lista es la base del boceto de estilo: un cuadro por escena.",
+   "entregable": "02-ESCENAS.md",
+   "revisor": "argon",
+   "revisa": "¿Cada escena se entiende sin texto y el universo visual es uno solo?",
+   "trabajo": "especificar"
+  },
+  {
+   "id": "estilo",
+   "nombre": "Boceto de estilo (un cuadro por escena)",
+   "tipo": "ab",
+   "trabajo": "construir",
+   "papel": "estilo",
+   "entregable": "estilo.html",
+   "hoja": "estilo.png",
+   "hoja_herramienta": "hoja_estilo",
+   "constructores": [
+    {
+     "agente": "opus",
+     "modelo": "opus",
+     "esfuerzo": "medium"
+    },
+    {
+     "agente": "sonnet",
+     "modelo": "sonnet",
+     "esfuerzo": "medium"
+    }
+   ],
+   "instruccion": "Construye estilo.html, el boceto de estilo del video: UN cuadro por escena de 02-ESCENAS.md, terminado y bonito, en un solo HTML autocontenido con <canvas id=\"c\"> de 1080x1920, sin librerías, con window.DURATION = número de escenas y window.seek(t) que dibuja la escena floor(t)+1 en su pose clave, con un rótulo chico 'ESCENA n' arriba a la izquierda. Sin subtítulos ni movimiento. Aquí se decide cómo se ve todo (personajes, objetos, órganos, paleta, trazo): este boceto será la referencia obligada del video. Deja libre el cuarto inferior. Lee 01-CONCEPTO.md y 02-ESCENAS.md de {carpeta}. Escribe el archivo de una vez y corrige solo lo necesario.",
+   "verificar": "node {base}/herramientas/hoja-html.mjs estilo.html _verificar/estilo.png --cada 1",
+   "juez": "argon",
+   "juzga": "Mira hojaA.png y hojaB.png (read_file): dos bocetos de estilo del mismo video, un cuadro por escena. ¿Cuál explica mejor cada escena y se ve mejor para compartir? En la primera línea 'GANA A' o 'GANA B'. Luego, en máximo 3 líneas: qué decidió el resultado (dibujo, claridad, encuadre, fidelidad a las escenas) y qué le corregirías al ganador.",
+   "compuerta": "estilo",
+   "retoca": "retocar"
+  },
+  {
+   "id": "speech",
+   "lider": "opus",
+   "motivo_elenco": "regla de Didier: el speech siempre lo escribe Opus, con Argon de invitado (FALLA 49)",
+   "nombre": "Speech",
+   "invitados": [
+    "argon"
+   ],
+   "abre": "Escribe el speech para la duración del brief (unas 2.3 palabras por segundo), siguiendo las escenas: la primera frase abre la duda, el final la contesta. Nada de 'quizá' tras 'quizá'. Lenguaje coloquial, como se lo dirías a una amiga: nada de términos técnicos.",
+   "reacciona": "Argon: di qué frase no se puede ver en pantalla o cuál pide otra imagen.",
+   "cierra": "Deja el speech final entre una línea 'SPEECH:' y una línea 'FIN' (solo el texto que se dice; alternativas y notas van fuera del bloque) y, aparte, el tono para AI Studio (una línea: voz, ritmo, pausas).",
+   "entregable": "03-SPEECH.md",
+   "revisor": "terra",
+   "revisa": "Solo las afirmaciones sobre hechos: ¿alguna inventada, exagerada o vuelta certeza? Si algo no se sostiene, propón la versión más fuerte que sí sea cierta (no la más tibia). Si no hay afirmaciones que revisar, PASA.",
+   "compuerta": "speech",
+   "libro": ["Palabras y tono", "Speech y retención", "Salud y producto"],
+   "trabajo": "construir",
+   "reajusta": "escenas"
+  },
+  {
+   "id": "voz",
+   "nombre": "Voz y SRT",
+   "tipo": "espera",
+   "archivos": [
+    "voz.wav",
+    "voz.srt"
+   ],
+   "trabajo": "construir"
+  },
+  {
+   "id": "storyboard",
+   "nombre": "Storyboard a segundos",
+   "invitados": [
+    "argon",
+    "sol"
+   ],
+   "abre": "Con el SRT, las escenas y el boceto de estilo aprobado (estilo.png), propone los bloques de tiempo: en qué palabra llega cada escena a su pose clave y qué se mueve entre una y otra.",
+   "reacciona": "Argon: cuida que el movimiento respete el estilo aprobado y dónde van los ojos. Sol: audita tiempos y coherencia (algo nuevo cada 2-4 s, respiros de 1.2 s, que la imagen conteste a la voz).",
+   "taller": {
+    "instruccion": "Escribe 04-STORYBOARD.md: formato 1080x1920 30 fps, duración = la del voz.wav, tabla por tramos con segundos exactos del voz.srt: qué escena se ve (las de estilo.png, con su dibujo aprobado), qué se mueve y en qué palabra; subtítulos por frase con los tiempos del SRT; zonas seguras (texto y >= 192 px, nada en el 18 % de abajo). Al final, una línea exacta 'TIEMPOS_CLAVE: t1, t2, …' con el segundo en que cada escena llega a su pose clave (uno por escena, en orden). Lee 02-ESCENAS.md, 03-SPEECH.md, voz.srt y estilo.html de la carpeta."
+   },
+   "entregable": "04-STORYBOARD.md",
+   "revisor": "opus",
+   "revisa": "¿El storyboard respeta las escenas y el estilo aprobado, cae en los tiempos del SRT, trae la línea TIEMPOS_CLAVE y se puede construir en canvas?",
+   "trabajo": "especificar"
+  },
+  {
+   "id": "animacion",
+   "nombre": "Animación desde el estilo aprobado",
+   "tipo": "taller",
+   "trabajo": "construir",
+   "papel": "animar",
+   "entregable": "reel.html",
+   "instruccion": "Construye reel.html, el video animado completo: un solo HTML autocontenido con <canvas id=\"c\"> de 1080x1920, sin librerías, con render(t) puro, window.seek(t) y window.DURATION = duración del voz.wav. El dibujo es el de estilo.html (aprobado): mismas formas, colores y trazo; reutiliza su código. Anímalo según 04-STORYBOARD.md con los tiempos del voz.srt: cada escena llega a su pose clave en su TIEMPOS_CLAVE, movimiento con ease suave entre poses, subtítulos por frase. Nada nuevo que no esté en el estilo o el storyboard. Cuando corras la prueba, compara tu hoja con estilo.png: cada escena debe verse como su cuadro aprobado. {correccion}",
+   "verificar": "node {base}/herramientas/hoja-html.mjs reel.html _verificar/hoja.png --tiempos-de 04-STORYBOARD.md --cada 2"
+  },
+  {
+   "id": "render",
+   "nombre": "Render y revisión visual",
+   "tipo": "render",
+   "revisor": "argon",
+   "revisa": "Mira estilo.png (el estilo aprobado, un cuadro por escena) y hoja.png (el video en el momento clave de cada escena), con read_file. ¿Se perdió o cambió algo aprobado, o algo se ve roto, encimado, cortado o ilegible? Responde 'PASA' o 'CAMBIA: <qué, en qué segundo>' en máximo 3 líneas.",
+   "compuerta": "final",
+   "libro": ["Visual y zonas"],
+   "trabajo": "verificar",
+   "retoca": "retocar",
+   "verificar": "node {base}/herramientas/hoja-html.mjs reel.html _verificar/hoja.png --tiempos-de 04-STORYBOARD.md --cada 2"
+  },
+  {
+   "id": "cierre",
+   "nombre": "Cierre",
+   "tipo": "leccion",
+   "lider": "opus",
+   "abre": "En una sola línea: la lección más útil de esta corrida para la próxima vez (proceso, no contenido).",
+   "trabajo": "decidir",
+   "motivo_elenco": "a priori: Opus orquestó las piezas y ve el proceso completo"
+  }
+ ],
+ "oficio": "video"
+}

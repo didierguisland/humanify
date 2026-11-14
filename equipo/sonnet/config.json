@@ -1,0 +1,9 @@
+{
+  "motor": "claude",
+  "modelo": "sonnet",
+  "esfuerzo": "medium",
+  "color": "38;5;75",
+  "activo": true,
+  "orden": 5,
+  "ronda": false
+}
